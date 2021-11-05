@@ -3,7 +3,7 @@ package com.domain.libreria.entidades;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,10 +24,10 @@ public class Libro {
 	private Boolean alta;
 	
 	// Relaciones de Entidad
-	@OneToOne
+	@ManyToOne
 	private Autor autor;
 	
-	@OneToOne
+	@ManyToOne
 	private Editorial editorial;
 
 	
