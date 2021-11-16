@@ -1,6 +1,7 @@
 package com.domain.libreria.servicios;
 
 
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,7 @@ public class LibroServicio {
 		// Seteamos los valores
 		libro.setIsbn(isbn);
 		libro.setTitulo(titulo);
+		libro.setAnio(anio);
 		libro.setEjemplares(ejemplares);
 		libro.setAutor(autor);
 		libro.setEditorial(editorial);
@@ -70,7 +72,17 @@ public class LibroServicio {
 		libroRepositorio.save(libro);
 	}
 	
+	public void modificarLibro(String titulo, Integer anio, Integer ejemplares, String nombreAutor, String nombreEditorial) {
+		
+	}
 	
+	public List<Libro> listarLibros(){
+		return null;
+	}
+	
+	public void buscarLibro() {
+		
+	}
 	
 	/*
 	 * Valida que los campos del formulario no sean nullos
