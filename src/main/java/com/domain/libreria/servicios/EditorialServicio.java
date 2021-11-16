@@ -13,6 +13,9 @@ public class EditorialServicio {
 	@Autowired
 	private EditorialRepositorio editorialRepositorio;
 
+	/*
+	 * 
+	 */
 	public Editorial guardarEditorial(String nombre) throws ErrorServicio {
 
 		validar(nombre);
