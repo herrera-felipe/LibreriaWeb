@@ -22,7 +22,7 @@ public interface LibroRepositorio extends JpaRepository<Libro, String> {
 	public List<Libro> buscarLibroPorAnio(@Param("anio") Integer anio);
 	
 	@Query("SELECT l FROM Libro l WHERE l.titulo = :titulo")
-	public Libro buscarLibroPorTitulo(@Param("titulo") String titulo);
+	public List<Libro> buscarLibroPorTitulo(@Param("titulo") String titulo);
 	
 	@Query("SELECT l FROM Libro l WHERE l.isbn = :isbn")
 	public Libro buscarLibroPorIsbn(@Param("isbn") Long isbn);
