@@ -80,22 +80,19 @@ public class LibroServicio {
 		validar(isbn, titulo, anio, ejemplares, nombreAutor, nombreEditorial); // Validamos los datos del formulario
 
 		Autor autor = autorRespositorio.buscarAutorPorNombre(nombreAutor); // Buscamos el autor en la BD
-
-		// Sino existe el Autor, lo creamos
 		if (Objects.isNull(autor)) {
+			// Sino existe el Autor, lo creamos
 			autor = autorServicio.guardarAutor(nombreAutor);
 		}
 
 		Editorial editorial = editorialRepositorio.buscarEditorialPorNombre(nombreEditorial); // Buscamos la Editorial
-
-		// Sino existe la Editorial, la creamos
 		if (Objects.isNull(editorial)) {
+			// Sino existe la Editorial, la creamos
 			editorial = editorialServicio.guardarEditorial(nombreEditorial);
 		}
 		
 		
 		Optional<Libro> respuesta = libroRepositorio.findById(id); // Buscamos el libro a modificar
-
 		if (respuesta.isPresent()) {
 			Libro libro = respuesta.get();
 			
@@ -109,7 +106,7 @@ public class LibroServicio {
 			
 			libroRepositorio.save(libro); // persistimos en la BD
 		} else {
-			throw new ErrorServicio("No se encontro el Libro solicitado");
+			throw new ErrorServicio("No se encontró el Libro solicitado");
 		}
 	}
 
@@ -157,23 +154,27 @@ public class LibroServicio {
 	}
 
 	@Transactional
-	public Libro alta(String id) {
-
-		Libro entidad = libroRepositorio.getById(id);
-
-		entidad.setAlta(true);
-
-		return libroRepositorio.save(entidad);
+	public void alta(String id) throws ErrorServicio {
+		Optional<Libro> respuesta = libroRepositorio.findById(id);
+		if(respuesta.isPresent()) {
+			Libro libro = respuesta.get();
+			libro.setAlta(true);
+			libroRepositorio.save(libro);
+		} else {
+			throw new ErrorServicio("No se encontró el Libro solicitado");
+		}
 	}
 
 	@Transactional
-	public Libro baja(String id) {
-
-		Libro entidad = libroRepositorio.getById(id);
-
-		entidad.setAlta(false);
-
-		return libroRepositorio.save(entidad);
+	public void baja(String id) throws ErrorServicio {
+		Optional<Libro> respuesta = libroRepositorio.findById(id);
+		if(respuesta.isPresent()) {
+			Libro libro = respuesta.get();
+			libro.setAlta(false);
+			libroRepositorio.save(libro);
+		} else {
+			throw new ErrorServicio("No se encontró el Libro solicitado");
+		}
 	}
 
 	/*
