@@ -3,6 +3,7 @@ package com.domain.libreria.servicios;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -76,8 +77,6 @@ public class LibroServicio {
 	public void modificarLibro(String id, Long isbn, String titulo, Integer anio, Integer ejemplares,
 			String nombreAutor, String nombreEditorial) throws ErrorServicio {
 
-		Libro libro = libroRepositorio.findById(id).get(); // Buscamos el libro a modificar
-
 		validar(isbn, titulo, anio, ejemplares, nombreAutor, nombreEditorial); // Validamos los datos del formulario
 
 		Autor autor = autorRespositorio.buscarAutorPorNombre(nombreAutor); // Buscamos el autor en la BD
@@ -93,16 +92,25 @@ public class LibroServicio {
 		if (Objects.isNull(editorial)) {
 			editorial = editorialServicio.guardarEditorial(nombreEditorial);
 		}
-
-		// Seteamos los valores
-		libro.setIsbn(isbn);
-		libro.setTitulo(titulo);
-		libro.setAnio(anio);
-		libro.setEjemplares(ejemplares);
-		libro.setAutor(autor);
-		libro.setEditorial(editorial);
 		
-		libroRepositorio.save(libro); // persistimos en la BD
+		
+		Optional<Libro> respuesta = libroRepositorio.findById(id); // Buscamos el libro a modificar
+
+		if (respuesta.isPresent()) {
+			Libro libro = respuesta.get();
+			
+			// Seteamos los valores
+			libro.setIsbn(isbn);
+			libro.setTitulo(titulo);
+			libro.setAnio(anio);
+			libro.setEjemplares(ejemplares);
+			libro.setAutor(autor);
+			libro.setEditorial(editorial);
+			
+			libroRepositorio.save(libro); // persistimos en la BD
+		} else {
+			throw new ErrorServicio("No se encontro el Libro solicitado");
+		}
 	}
 
 	@Transactional(readOnly = true)
