@@ -81,7 +81,27 @@ public class LibroServicio {
 	}
 	
 	public void buscarLibro() {
+
 		
+	}
+	
+	
+	public Libro alta(String id) {
+		
+		Libro entidad = libroRepositorio.getById(id);
+		
+		entidad.setAlta(true);
+		
+		return libroRepositorio.save(entidad);
+	}
+	
+	public Libro baja(String id) {
+		
+		Libro entidad = libroRepositorio.getById(id);
+		
+		entidad.setAlta(false);
+		
+		return libroRepositorio.save(entidad);
 	}
 	
 	/*
