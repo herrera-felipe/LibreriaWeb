@@ -27,6 +27,6 @@ public interface LibroRepositorio extends JpaRepository<Libro, String> {
 	@Query("SELECT l FROM Libro l WHERE l.isbn = :isbn")
 	public Libro buscarLibroPorIsbn(@Param("isbn") Long isbn);
 	
-	@Query("SELECT a from Libro a WHERE a.alta = true ")
+	@Query("SELECT a FROM Libro a WHERE a.alta = true ")
 	public List<Libro> buscarActivos();
 }
