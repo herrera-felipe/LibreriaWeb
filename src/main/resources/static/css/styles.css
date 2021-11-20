@@ -2,10 +2,51 @@
 
 body {
 	margin: 0;
-	background-color: #efefef;
+	background-color: #d1d8e0;
+}
+
+body h1, h2 {
+	text-align: center;
 }
 
 #titulo {
-       font-size: 4rem;
-       text-align: center;
+	font-size: 4rem;
+}
+
+header.cabecera {
+	background-color: #20bf6b;
+	color: white;
+	padding: 2rem 1rem;
+}
+
+#menu {
+	transition: color 0.3sec ease;
+}
+
+#menu:hover {
+	box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+section.container {
+	width: 600px;
+	margin: 0 auto;
+}
+
+section article {
+	transition: all 0.3s ease; /* transicion para la sombra  */
+	background-color: white;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	padding: 0.25rem 0;
+	cursor: pointer; /* añade la manito cuando ponemos mouse encima */
+}
+
+/* animacion de sombra */
+section article:hover {
+	box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+section p {
+	text-align: left;
+	margin: 1rem;
 }
