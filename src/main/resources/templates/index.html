@@ -23,6 +23,7 @@
 		<h1 id="titulo">Libreria</h1>
 	</header>
 
+	<!-- NAVBAR -->
 	<div id="menu">
 		<nav class="navbar navbar-expand-lg navbar-dark"
 			style="background-color: #20bf6b">
@@ -31,26 +32,47 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/"><strong>Home</strong></a></li>
 
-					<li class="nav-item"><a class="nav-link" href="#"><strong>Libro</strong></a>
-					</li>
-
-					<li class="nav-item"><a class="nav-link" href="#"><strong>Autor</strong></a>
-					</li>
-
-					<li class="nav-item"><a class="nav-link" href="#"><strong>Editorial</strong></a>
-					</li>
+					<!-- LIBRO DROPDOWN -->
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<strong>Libro</strong> </a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="/libro/registro">Registrar Libro</a></li>
+							<li><a class="dropdown-item" href="#">Lista de Libros</a></li>
+						</ul></li>
+					<!-- AUTOR DROPDOWN -->
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<strong>Autor</strong> </a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="/autor/registro">Registrar Autor</a></li>
+							<li><a class="dropdown-item" href="#">Lista de Autores</a></li>
+						</ul></li>
+					<!-- EDITORIAL DROPDOWN -->
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<strong>Editorial</strong> </a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="/editorial/registro">Registrar Editorial</a></li>
+							<li><a class="dropdown-item" href="#">Lista de Editoriales</a></li>
+						</ul></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
 
+	<!-- CONTENEDOR -->
 	<section class="container-home">
 		<article class="post">
 			<h2>Libro</h2>
 			<p>
 				<img alt="icon" src="../img/libros.png" width="100%" /> <a
-					href="/libro/registro" class="btn btn-success btn-xl rounded-pill mt-5">
-					Registrar Libro</a>
+					href="/libro/registro"
+					class="btn btn-success btn-xl rounded-pill mt-5"> Registrar
+					Libro</a>
 			</p>
 		</article>
 
@@ -58,8 +80,9 @@
 			<h2>Autor</h2>
 			<p>
 				<img alt="icon" src="../img/autor.png" width="100%" /> <a
-					href="/autor/registro" class="btn btn-success btn-xl rounded-pill mt-5">
-					Registrar Autor</a>
+					href="/autor/registro"
+					class="btn btn-success btn-xl rounded-pill mt-5"> Registrar
+					Autor</a>
 			</p>
 		</article>
 
@@ -67,8 +90,9 @@
 			<h2>Editorial</h2>
 			<p>
 				<img alt="icon" src="../img/libreria.png" width="100%" /> <a
-					href="/editorial/registro" class="btn btn-success btn-xl rounded-pill mt-5">
-					Registrar Editorial</a>
+					href="/editorial/registro"
+					class="btn btn-success btn-xl rounded-pill mt-5"> Registrar
+					Editorial</a>
 			</p>
 		</article>
 	</section>
@@ -85,6 +109,15 @@
 		from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 	</div>
 	-->
+	<!-- Js para funcionalidad de items Bootstrap -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
