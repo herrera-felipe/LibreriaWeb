@@ -73,6 +73,7 @@
 		</nav>
 	</div>
 
+	<!-- CONTENEDOR TABLA -->
 	<section class="container-lista">
 		<article class="post">
 			<h2 class="display-5">Lista de Autores</h2>
@@ -91,20 +92,18 @@
 				<tbody th:each="autor : ${autores}">
 					<tr>
 						<!-- ID -->
-						<th scope="row" th:text="${autor.id}"></th>
+						<td th:text="${autor.id}"></td>
 						<!-- NOMBRE -->
 						<td th:text="${autor.nombre}"></td>
 						<!-- Activo / Inactivo -->
-						<td><i th:if="${autor.alta}"
-							class="fa fa-circle text-success"></i> <i
-							th:unless="${autor.alta}" class="fa fa-circle"
-							style="color: red;"></i></td>
-						<td><a th:href="@{/autor/alta/__${autor.id}__}"><i
-								class="fa fa-arrow-up"></i></a> <!-- Alta --> <a
-							th:href="@{/autor/baja/__${autor.id}__}"><i class="fa fa-ban"></i></a>
-							<!-- Baja --> <a th:href="@{/autor/modificar/__${autor.id}__}"><i
-								class="fas fa-feather-alt"></i></a></td>
-						<!-- Modificar -->
+						<td>
+							<i th:if="${autor.alta}" class="fa fa-circle text-success"></i> 
+							<i th:unless="${autor.alta}" class="fa fa-circle" style="color: red;"></i>
+						</td>
+						<td>
+							<a th:href="@{/autor/alta/__${autor.id}__}"> <i class="fa fa-arrow-up"></i></a> <!-- Alta --> 
+							<a th:href="@{/autor/baja/__${autor.id}__}"><i class="fa fa-ban"></i></a> <!-- Baja --> 
+							<a th:href="@{/autor/modificar/__${autor.id}__}"><i class="fas fa-feather-alt"></i></a></td> <!-- Modificar -->
 					</tr>
 				</tbody>
 			</table>

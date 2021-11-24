@@ -81,7 +81,7 @@
 			<h2 class="display-5">Lista de Libros</h2>
 			<br> <br>
 			<!-- TABLA PARA LISTAR AUTORES -->
-			<table class="table table-success">
+			<table class="table table-success" style="text-align: center;">
 				<thead>
 					<tr>
 						<th scope="col">id</th>
@@ -127,7 +127,7 @@
 								<i class="fa fa-ban"></i>
 							</a>
 							<!-- Modificar -->
-							<a th:href="">
+							<a th:href="@{/libro/modificar/__${libro}__}">
 								<i class="fas fa-feather-alt"></i>
 							</a>
 						</td>
