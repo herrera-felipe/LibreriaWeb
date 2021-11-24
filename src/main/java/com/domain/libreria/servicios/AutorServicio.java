@@ -112,18 +112,7 @@ public class AutorServicio {
 
 	@Transactional(readOnly = true)
 	public Autor buscarPorId(String id) {
-
-		Optional<Autor> respuesta = autorRepositorio.findById(id);
-
-		Autor autor = new Autor();
-
-		if (respuesta.isPresent()) {
-			autor = respuesta.get();
-		} else {
-			return null;
-		}
-
-		return autor;
+		return autorRepositorio.getOne(id);
 	}
 
 	public void validar(String nombre) throws ErrorServicio {
