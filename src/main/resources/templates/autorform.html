@@ -101,15 +101,19 @@
 						class="col-sm-2 col-form-label col-form-label">Nombre</label> <input
 						type="text" class="form-control form-control" name="nombre">
 				</div>
-				<!-- BOTON -->
+				<!-- BOTON SUBMIT-->
 				<div class="col-auto">
-					<br>
 					<button type="submit"
 						class="btn btn-success btn-xl rounded-pill mt-5">Submit</button>
 				</div>
+				<!-- BOTON RESET-->
 				<div class="col-auto">
-					<br> <input class="btn btn-secondary btn-xl rounded-pill mt-5"
+					<input class="btn btn-secondary btn-xl rounded-pill mt-5"
 						type="Reset" value="Reset">
+				</div>
+				<!-- BOTON VOLVER-->
+				<div class="col-auto">
+					<a th:href="@{/}" class="btn btn-secondary btn-xl rounded-pill mt-5">Volver</a>
 				</div>
 			</form>
 		</article>
