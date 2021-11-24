@@ -119,6 +119,11 @@ public class LibroServicio {
 	public List<Libro> listarTodos() {
 		return libroRepositorio.findAll();
 	}
+	
+	@Transactional(readOnly = true)
+	public Libro buscarPorId(String id) {
+		return libroRepositorio.getById(id);
+	}
 
 	@Transactional(readOnly = true)
 	public Libro buscarPorIsbn(String id) {
