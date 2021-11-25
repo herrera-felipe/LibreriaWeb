@@ -88,6 +88,11 @@ public class EditorialServicio {
 	}
 	
 	@Transactional(readOnly = true)
+	public Editorial buscarPorId(String id) {
+		return editorialRepositorio.getOne(id);
+	}
+	
+	@Transactional(readOnly = true)
 	public List<Editorial> buscarPorNombre(String nombre) {
 		
 		List<Editorial> listaEditorial = listarTodos(); //traemos todas las editoriales
