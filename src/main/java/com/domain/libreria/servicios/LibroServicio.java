@@ -122,7 +122,7 @@ public class LibroServicio {
 	
 	@Transactional(readOnly = true)
 	public Libro buscarPorId(String id) {
-		return libroRepositorio.getById(id);
+		return libroRepositorio.getOne(id);
 	}
 
 	@Transactional(readOnly = true)
