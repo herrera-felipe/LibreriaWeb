@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista Libros</title>
+<title>Lista Editorial</title>
 
 <!-- Bootstrap CSS -->
 <link
@@ -25,6 +24,7 @@
 </head>
 
 <body>
+	
 	<header class="cabecera">
 		<h1 id="titulo">Libreria</h1>
 	</header>
@@ -40,7 +40,7 @@
 
 					<!-- LIBRO DROPDOWN -->
 					<li class="nav-item dropdown"><a
-						class="nav-link active dropdown-toggle" href="#" id="navbarDropdown"
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<strong>Libro</strong> </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -58,7 +58,7 @@
 						</ul></li>
 					<!-- EDITORIAL DROPDOWN -->
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						class="nav-link active dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<strong>Editorial</strong> </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -70,63 +70,38 @@
 		</nav>
 	</div>
 
-
 	<!-- CONTENEDOR TABLA -->
 	<section class="container-lista">
 		<article class="post">
-			<h2 class="display-5">Lista de Libros</h2>
+			<h2 class="display-5">Lista de Editoriales</h2>
 			<br> <br>
 			<!-- TABLA PARA LISTAR AUTORES -->
-			<table class="table table-success" style="text-align: center;">
+			<table class="table table-success">
 				<thead>
 					<tr>
 						<th scope="col">id</th>
-						<th scope="col">Isbn</th>
-						<th scope="col">Titulo</th>
-						<th scope="col">Año</th>
-						<th scope="col">Ejemplares</th>
-						<th scope="col">Autor</th>
-						<th scope="col">Editorial</th>
+						<th scope="col">Nombre</th>
 						<th scope="col">Alta/Baja</th>
 						<th scope="col">Acciones</th>
 					</tr>
 				</thead>
-				<!-- Usamos thymeleaf para recorrer la lista de libros en un each -->
-				<tbody th:each="libro : ${libros}">
+				<!-- Usamos thymeleaf para recorrer la lista en un each -->
+				<tbody th:each="editorial : ${editoriales}">
 					<tr>
 						<!-- ID -->
-						<td th:text="${libro.id}"></td>
-						<!-- ISBN -->
-						<td th:text="${libro.isbn}"></td>
-						<!-- Titulo -->
-						<td th:text="${libro.titulo}"></td>
-						<!-- Anio -->
-						<td th:text="${libro.anio}"></td>
-						<!-- Ejemplares -->
-						<td th:text="${libro.ejemplares}"></td>
-						<!-- Autor -->
-						<td th:text="${libro.autor.nombre}"></td>
-						<!-- Editorial -->
-						<td th:text="${libro.editorial.nombre}"></td>
+						<td th:text="${editorial.id}"></td>
+						<!-- NOMBRE -->
+						<td th:text="${editorial.nombre}"></td>
 						<!-- Activo / Inactivo -->
 						<td>
-							<i th:if="${libro.alta}" class="fa fa-circle text-success"></i> 
-							<i th:unless="${libro.alta}" class="fa fa-circle" style="color: red;"></i>
+							<i th:if="${editorial.alta}" class="fa fa-circle text-success"></i> 
+							<i th:unless="${editorial.alta}" class="fa fa-circle" style="color: red;"></i>
 						</td>
 						<td>
-							<!-- Alta --> 
-							<a th:href="@{/libro/alta/__${libro.id}__}">
-								<i class="fa fa-arrow-up"></i>
-							</a> 
-							<!-- Baja -->
-							<a th:href="@{/libro/baja/__${libro.id}__}">
-								<i class="fa fa-ban"></i>
-							</a>
-							<!-- Modificar -->
-							<a th:href="@{/libro/modificar/__${libro.id}__}">
-								<i class="fas fa-feather-alt"></i>
-							</a>
-						</td>
+							<a th:href="@{/editorial/alta/__${editorial.id}__}"> <i class="fa fa-arrow-up"></i></a> <!-- Alta --> 
+							<a th:href="@{/editorial/baja/__${editorial.id}__}"><i class="fa fa-ban"></i></a> <!-- Baja --> 
+							<a th:href="@{/editorial/modificar/__${editorial.id}__}"><i class="fas fa-feather-alt"></i></a> <!-- Modificar -->
+						</td> 
 					</tr>
 				</tbody>
 			</table>
@@ -159,5 +134,4 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 </body>
-
 </html>
