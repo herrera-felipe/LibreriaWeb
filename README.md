@@ -13,6 +13,7 @@ Permitiendo dar de alta / baja y modificación de los mismos.
 * [Spring Boot](https://spring.io/): Version 2.5.6
 * [MySql](https://www.mysql.com/): Version 8.0
 * [Thymeleaf](https://www.thymeleaf.org/index.html): Version 3.0.12.RELEASE
+* [Maven](https://maven.apache.org/): Version 4.0.8
 * [Html](https://developer.mozilla.org/es/docs/Web/HTML)
 * [Css](https://developer.mozilla.org/es/docs/Web/CSS)
 * [BootsTrap](https://getbootstrap.com/): v5.1.3
