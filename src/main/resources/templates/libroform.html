@@ -125,12 +125,10 @@
 					<label for="colFormLabel"
 						class="col-sm-2 col-form-label col-form-label">Autor</label> <select
 						id="autoSizingSelect" class="form-select" name="nombreAutor">
-						<option selected>Selecciona Autor...</option>
-						<option>Autor 1</option>
-						<option>Autor 2</option>
-						<option>Autor 3</option>
-						<option>Autor 4</option>
-						<option>Autor 5</option>
+						<option selected>Seleciona Autor...</option>
+						<!-- Usamos thymeleaf para traer la lista de autores existentes -->
+						<option th:each="autor:${autores}" th:value="${autor.nombre}"
+							th:text="${autor.nombre}"></option>
 					</select>
 				</div>
 				<!-- EDITORIAL -->
@@ -138,27 +136,35 @@
 					<label for="colFormLabel"
 						class="col-sm-2 col-form-label col-form-label">Editorial</label> <select
 						id="autoSizingSelect" class="form-select" name="nombreEditorial">
-						<option selected>Selecciona Editorial...</option>
-						<option>Editorial 1</option>
-						<option>Editorial 2</option>
-						<option>Editorial 3</option>
-						<option>Editorial 4</option>
-						<option>Editorial 5</option>
+						<option selected>Seleciona Editorial...</option>
+						<!-- Usamos thymeleaf para traer la lista de editoriales existentes -->
+						<option th:each="editorial : ${editoriales}"
+							th:value="${editorial.nombre}" th:text="${editorial.nombre}"></option>
 					</select>
 				</div>
-				<!-- BOTON -->
+				<!-- BOTON SUBMIT-->
 				<div class="col-auto">
-					<br>
 					<button type="submit"
 						class="btn btn-success btn-xl rounded-pill mt-5">Submit</button>
 				</div>
+				<!-- BOTON RESET-->
 				<div class="col-auto">
-					<br> <input class="btn btn-secondary btn-xl rounded-pill mt-5"
+					<input class="btn btn-secondary btn-xl rounded-pill mt-5"
 						type="Reset" value="Reset">
 				</div>
+				<!-- BOTON VOLVER-->
+				<div class="col-auto">
+					<a th:href="@{/}"
+						class="btn btn-secondary btn-xl rounded-pill mt-5">Volver</a>
+				</div>
 			</form>
+
+
+
+
 		</article>
 	</section>
+
 
 	<!-- Js para funcionalidad de items Bootstrap -->
 	<script
