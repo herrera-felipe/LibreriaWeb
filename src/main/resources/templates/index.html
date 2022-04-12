@@ -1,123 +1,162 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Home</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
 
-<!-- Bootstrap CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous" />
 
-<!--css propio-->
-<link rel="stylesheet" href="/css/styles.css" />
-</head>
+        <!--css propio-->
+        <link rel="stylesheet" href="../static/css/styles.css" />
+    </head>
 
-<body>
-	<header class="cabecera">
-		<h1 id="titulo">Libreria</h1>
-	</header>
+    <body>
+        <header class="cabecera">
+            <!-- NAVBAR -->
+            <div class="topnav" id="menu">
+                <nav class="navbar navbar-expand navbar-dark"
+                    style="background: linear-gradient(-225deg, #1db6ce 0%,#1d8fe1 48%, #625eb1 100% );">
 
-	<!-- NAVBAR -->
-	<div id="menu">
-		<nav class="navbar navbar-expand-lg navbar-dark"
-			style="background-color: #20bf6b">
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/"><strong>Home</strong></a></li>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <!--HOME-->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/"><strong>Home</strong></a>
+                            </li>
 
-					<!-- LIBRO DROPDOWN -->
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<strong>Libro</strong> </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="/libro/registro">Registrar Libro</a></li>
-							<li><a class="dropdown-item" href="/libro/lista">Lista de Libros</a></li>
-						</ul></li>
-					<!-- AUTOR DROPDOWN -->
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<strong>Autor</strong> </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="/autor/registro">Registrar Autor</a></li>
-							<li><a class="dropdown-item" href="/autor/lista">Lista de Autores</a></li>
-						</ul></li>
-					<!-- EDITORIAL DROPDOWN -->
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<strong>Editorial</strong> </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="/editorial/registro">Registrar Editorial</a></li>
-							<li><a class="dropdown-item" href="/editorial/lista">Lista de Editoriales</a></li>
-						</ul></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
+                            <!-- LIBRO DROPDOWN -->
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <strong>Libro</strong> </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/libro/registro">Registrar Libro</a></li>
+                                    <li><a class="dropdown-item" href="/libro/lista">Lista de Libros</a></li>
+                                </ul>
+                            </li>
+                            <!-- AUTOR DROPDOWN -->
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <strong>Autor</strong> </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/autor/registro">Registrar Autor</a></li>
+                                    <li><a class="dropdown-item" href="/autor/lista">Lista de Autores</a></li>
+                                </ul>
+                            </li>
+                            <!-- EDITORIAL DROPDOWN -->
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <strong>Editorial</strong> </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/editorial/registro">Registrar Editorial</a></li>
+                                    <li><a class="dropdown-item" href="/editorial/lista">Lista de Editoriales</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
 
-	<!-- CONTENEDOR -->
-	<section class="container-home">
-		<article class="post">
-			<h2>Libro</h2>
-			<p>
-				<img alt="icon" src="../img/libros.png" width="100%" /> <a
-					href="/libro/registro"
-					class="btn btn-success btn-xl rounded-pill mt-5"> Registrar
-					Libro</a>
-			</p>
-		</article>
+            <div class="txt-cabecera">
+                <h1 id="titulo">SOPHIA</h1>
+                <p>Tú libreria online</p>
+            </div>
 
-		<article class="post">
-			<h2>Autor</h2>
-			<p>
-				<img alt="icon" src="../img/autor.png" width="100%" /> <a
-					href="/autor/registro"
-					class="btn btn-success btn-xl rounded-pill mt-5"> Registrar
-					Autor</a>
-			</p>
-		</article>
+            <div class="svg-wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150"
+                    preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                        style="stroke: none; fill:#ffff;"></path>
+                </svg></div>
+        </header>
 
-		<article class="post">
-			<h2>Editorial</h2>
-			<p>
-				<img alt="icon" src="../img/libreria.png" width="100%" /> <a
-					href="/editorial/registro"
-					class="btn btn-success btn-xl rounded-pill mt-5"> Registrar
-					Editorial</a>
-			</p>
-		</article>
-	</section>
+        <section class="intro sections-container">
+            <img src="../static/img/picture-02.jpg" alt="..." width="400px">
+            <div class="txt-intro">
+                <h1 class="titulo-left"> Titulo Parrafo</h1>
+                <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quas culpa velit aliquid
+                    maxime quaerat quae animi, iste obcaecati a aliquam repudiandae exercitationem voluptates molestias
+                    laboriosam quos deserunt magnam et?
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime quisquam nihil dolorem nisi
+                    necessitatibus praesentium expedita officia enim dolore natus. Molestias debitis dolorum eaque
+                    facere. Asperiores vitae omnis impedit sed.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias expedita quas ea provident
+                    corrupti beatae consequatur veniam magnam impedit esse? Eligendi alias, tenetur temporibus ipsam
+                    corrupti voluptatibus reprehenderit! Porro, harum.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea corporis maxime repudiandae magni?
+                    Nulla voluptates reiciendis vel minus a eligendi dicta rem, est, ratione ad quisquam similique id
+                    assumenda excepturi?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ab totam magnam rem at minima
+                    rerum dicta praesentium enim modi, quidem, assumenda aut sequi officiis ea a quas animi magni.
+                </p>
+            </div>
+        </section>
 
-	<!--  
-	<div>
-		Icons made by <a
-			href="https://www.flaticon.es/autores/vectorsmarket15"
-			title="vectorsmarket15">vectorsmarket15</a> from <a
-			href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a>
-	</div>
-	<div>
-		Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a>
-		from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-	</div>
-	-->
-	<!-- Js para funcionalidad de items Bootstrap -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-		crossorigin="anonymous"></script>
-</body>
+        <section class="info">
+            <div class="txt-info">
+                <h2 class="titulo-left">Seccion titulo</h2>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quas deleniti doloremque,
+                    accusantium impedit eum, optio nulla eos commodi quaerat repudiandae a qui iste facilis amet. Rem
+                    dolorem vel fuga? Error laborum laboriosam doloremque nam nostrum, eos assumenda consequatur a
+                    minima, ad, sapiente blanditiis debitis quibusdam. Aperiam animi veniam sint!
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTENEDOR CARDS -->
+        <section class="cards-section">
+            <div class="cards-container">
+                <div class="card">
+                    <p>
+                        <img alt="icon" src="../static/img/libros.png" width="100%" />
+                        <a href="/libro/registro" class="btn btn-outline-primary btn-xl rounded-pill mt-5"> Registrar
+                            Libro</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <p>
+                        <img alt="icon" src="../static/img/autor.png" width="100%" />
+                        <a href="/autor/registro" class="btn btn-outline-primary btn-xl rounded-pill mt-5"> Registrar
+                            Autor</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <p>
+                        <img alt="icon" src="../static/img/libreria.png" width="100%" /> <a href="/editorial/registro"
+                            class="btn btn-outline-primary btn-xl rounded-pill mt-5"> Registrar
+                            Editorial</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="footer">
+            <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                    style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
+                        style="stroke: none; fill: #ffff;"></path>
+                </svg></div>
+            <footer>
+                <div class="copyright">
+                    <p> Copyright 2022 © Felipe Herrera. All Right Reserved </p>
+                </div>
+            </footer>
+        </section>
+
+        <!-- Js para funcionalidad de items Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+    </body>
 
 </html>
