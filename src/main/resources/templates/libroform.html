@@ -1,173 +1,171 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Registrar libro</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Registrar libro</title>
 
-<!-- Bootstrap CSS -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous" />
 
-<!--css propio-->
-<link rel="stylesheet" href="/css/styles.css" />
-</head>
+        <!--css propio-->
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
 
-<body>
-	<header class="cabecera">
-		<h1 id="titulo">Libreria</h1>
-	</header>
+    <body>
+        <header class="cabecera">
+            <!-- NAVBAR -->
+            <div class="topnav" id="menu">
+                <nav class="navbar navbar-expand navbar-dark"
+                    style="background: linear-gradient(-225deg, #1db6ce 0%,#1d8fe1 48%, #625eb1 100% );">
 
-	<!-- NAVBAR -->
-	<div id="menu">
-		<nav class="navbar navbar-expand-lg navbar-dark"
-			style="background-color: #20bf6b">
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link"
-						aria-current="page" href="/"><strong>Home</strong></a></li>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <!--HOME-->
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/"><strong>Home</strong></a>
+                            </li>
 
-					<!-- LIBRO DROPDOWN -->
-					<li class="nav-item dropdown"><a
-						class="nav-link active dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<strong>Libro</strong> </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="/libro/registro">Registrar Libro</a></li>
-							<li><a class="dropdown-item" href="/libro/lista">Lista de Libros</a></li>
-						</ul></li>
-					<!-- AUTOR DROPDOWN -->
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<strong>Autor</strong> </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="/autor/registro">Registrar Autor</a></li>
-							<li><a class="dropdown-item" href="/autor/lista">Lista de Autores</a></li>
-						</ul></li>
-					<!-- EDITORIAL DROPDOWN -->
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<strong>Editorial</strong> </a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="/editorial/registro">Registrar Editorial</a></li>
-							<li><a class="dropdown-item" href="/editorial/lista">Lista de Editoriales</a></li>
-						</ul></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
+                            <!-- LIBRO DROPDOWN -->
+                            <li class="nav-item dropdown"><a class="nav-link active dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <strong>Libro</strong> </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/libro/registro">Registrar Libro</a></li>
+                                    <li><a class="dropdown-item" href="/libro/lista">Lista de Libros</a></li>
+                                </ul>
+                            </li>
+                            <!-- AUTOR DROPDOWN -->
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <strong>Autor</strong> </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/autor/registro">Registrar Autor</a></li>
+                                    <li><a class="dropdown-item" href="/autor/lista">Lista de Autores</a></li>
+                                </ul>
+                            </li>
+                            <!-- EDITORIAL DROPDOWN -->
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"
+                                    id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <strong>Editorial</strong> </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/editorial/registro">Registrar Editorial</a></li>
+                                    <li><a class="dropdown-item" href="/editorial/lista">Lista de Editoriales</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
 
-	<!-- CONTENEDOR DEL FORMULARIO -->
-	<section class="container">
-		<article class="post">
-			<h2 class="display-5">Agregar Libro</h2>
-			<br> <br>
+            <div class="txt-cabecera">
+                <h1 id="titulo">SOPHIA</h1>
+                <p>Tú libreria online</p>
+            </div>
 
-			<!-- Mensaje de registro exitoso que se accede con el ModelMap del controlador -->
-			<div th:if="${exito}!=null" class="card text-white bg-success mb-3">
-				<div class="card-body">
-					<h5 class="card-title">Exito</h5>
-					<p class="card-text" th:text="${exito}"></p>
-				</div>
-			</div>
+            <div class="svg-wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150"
+                    preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                        style="stroke: none; fill:#ffff;"></path>
+                </svg></div>
+        </header>
 
-			<!-- Mensaje de ERROR de registro que se accede con el ModelMap del controlador -->
-			<div th:if="${error}!=null" class="card text-white bg-danger mb-3">
-				<div class="card-body">
-					<h5 class="card-title">Error</h5>
-					<p class="card-text" th:text="${error}"></p>
-				</div>
-			</div>
+        <!-- CONTENEDOR DEL FORMULARIO -->
+        <section class="container">
+            <article class="post">
+                <h2 class="display-5">Agregar Libro</h2>
+                <br> <br>
 
-			<!-- FORMULARIO REGISTRO -->
-			<form th:action="@{/libro/registro}" method="POST" class="row g-3">
-				<!-- ISBN -->
-				<div class="row">
-					<label for="colFormLabel"
-						class="col-sm-2 col-form-label col-form-label">ISBN</label> <input
-						type="number" class="form-control form-control" name="isbn">
-				</div>
-				<!-- TITULO -->
-				<div class="row">
-					<label for="colFormLabel"
-						class="col-sm-2 col-form-label col-form-label">Titulo </label> <input
-						type="text" class="form-control form-control" name="titulo">
-				</div>
-				<!-- ANIO -->
-				<div class="row">
-					<label for="colFormLabel"
-						class="col-sm-2 col-form-label col-form-label">Año</label> <input
-						type="number" class="form-control form-control" name="anio">
-				</div>
-				<!-- EJEMPLARES -->
-				<div class="row">
-					<label for="colFormLabel"
-						class="col-sm-2 col-form-label col-form-label">Ejemplares</label>
-					<input type="number" class="form-control form-control"
-						name="ejemplares">
-				</div>
-				<!-- AUTOR -->
-				<div class="row">
-					<label for="colFormLabel"
-						class="col-sm-2 col-form-label col-form-label">Autor</label> <select
-						id="autoSizingSelect" class="form-select" name="nombreAutor">
-						<option selected>Seleciona Autor...</option>
-						<!-- Usamos thymeleaf para traer la lista de autores existentes -->
-						<option th:each="autor:${autores}" th:value="${autor.nombre}"
-							th:text="${autor.nombre}"></option>
-					</select>
-				</div>
-				<!-- EDITORIAL -->
-				<div class="row">
-					<label for="colFormLabel"
-						class="col-sm-2 col-form-label col-form-label">Editorial</label> <select
-						id="autoSizingSelect" class="form-select" name="nombreEditorial">
-						<option selected>Seleciona Editorial...</option>
-						<!-- Usamos thymeleaf para traer la lista de editoriales existentes -->
-						<option th:each="editorial : ${editoriales}"
-							th:value="${editorial.nombre}" th:text="${editorial.nombre}"></option>
-					</select>
-				</div>
-				<!-- BOTON SUBMIT-->
-				<div class="col-auto">
-					<button type="submit"
-						class="btn btn-success btn-xl rounded-pill mt-5">Submit</button>
-				</div>
-				<!-- BOTON RESET-->
-				<div class="col-auto">
-					<input class="btn btn-secondary btn-xl rounded-pill mt-5"
-						type="Reset" value="Reset">
-				</div>
-				<!-- BOTON VOLVER-->
-				<div class="col-auto">
-					<a th:href="@{/}"
-						class="btn btn-secondary btn-xl rounded-pill mt-5">Volver</a>
-				</div>
-			</form>
+                <!-- Mensaje de registro exitoso que se accede con el ModelMap del controlador -->
+                <div th:if="${exito}!=null" class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Exito</h5>
+                        <p class="card-text" th:text="${exito}"></p>
+                    </div>
+                </div>
 
+                <!-- Mensaje de ERROR de registro que se accede con el ModelMap del controlador -->
+                <div th:if="${error}!=null" class="card text-white bg-danger mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Error</h5>
+                        <p class="card-text" th:text="${error}"></p>
+                    </div>
+                </div>
 
+                <!-- FORMULARIO REGISTRO -->
+                <form th:action="@{/libro/registro}" method="POST" class="row g-3">
+                    <!-- ISBN -->
+                    <div class="row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">ISBN</label> <input
+                            type="number" class="form-control form-control" name="isbn">
+                    </div>
+                    <!-- TITULO -->
+                    <div class="row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Titulo </label> <input
+                            type="text" class="form-control form-control" name="titulo">
+                    </div>
+                    <!-- ANIO -->
+                    <div class="row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Año</label> <input
+                            type="number" class="form-control form-control" name="anio">
+                    </div>
+                    <!-- EJEMPLARES -->
+                    <div class="row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Ejemplares</label>
+                        <input type="number" class="form-control form-control" name="ejemplares">
+                    </div>
+                    <!-- AUTOR -->
+                    <div class="row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Autor</label> <select
+                            id="autoSizingSelect" class="form-select" name="nombreAutor">
+                            <option selected>Seleciona Autor...</option>
+                            <!-- Usamos thymeleaf para traer la lista de autores existentes -->
+                            <option th:each="autor:${autores}" th:value="${autor.nombre}" th:text="${autor.nombre}">
+                            </option>
+                        </select>
+                    </div>
+                    <!-- EDITORIAL -->
+                    <div class="row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label col-form-label">Editorial</label>
+                        <select id="autoSizingSelect" class="form-select" name="nombreEditorial">
+                            <option selected>Seleciona Editorial...</option>
+                            <!-- Usamos thymeleaf para traer la lista de editoriales existentes -->
+                            <option th:each="editorial : ${editoriales}" th:value="${editorial.nombre}"
+                                th:text="${editorial.nombre}"></option>
+                        </select>
+                    </div>
+                    <!-- BOTON SUBMIT-->
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-outline-primary btn-xl rounded-pill mt-5">Submit</button>
+                    </div>
+                    <!-- BOTON RESET-->
+                    <div class="col-auto">
+                        <input class="btn btn-outline-secondary btn-xl rounded-pill mt-5" type="Reset" value="Reset">
+                    </div>
+                    <!-- BOTON VOLVER-->
+                    <div class="col-auto">
+                        <a th:href="@{/}" class="btn btn-outline-secondary btn-xl rounded-pill mt-5">Volver</a>
+                    </div>
+                </form>
 
 
-		</article>
-	</section>
 
 
-	<!-- Js para funcionalidad de items Bootstrap -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-		crossorigin="anonymous"></script>
-</body>
+            </article>
+        </section>
+
+
+        <!-- Js para funcionalidad de items Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+    </body>
 
 </html>
